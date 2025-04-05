@@ -1,9 +1,13 @@
-
-
 def download_data():
     pass
 
-def main() :
+
+def main():
+    """
+    2 functions
+    - personalized ver
+    - overall ver
+    """
 
     # download data
     pass
@@ -17,5 +21,6 @@ def main() :
     # start service
     pass
 
-if __name__ == "__main__" :
+
+if __name__ == "__main__":
     print("start app!")
