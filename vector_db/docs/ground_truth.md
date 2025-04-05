@@ -1,0 +1,104 @@
+# Ground Truth
+
+1.  
+   - **Name**: Emma Johnson  
+   - **Age**: 29  
+   - **Gender**: Female  
+   - **Favorite Color**: Blue  
+   - **Favorite Pet**: Dog  
+   - **Favorite Food**: Sushi  
+
+2.  
+   - **Name**: Oliver Smith  
+   - **Age**: 34  
+   - **Gender**: Male  
+   - **Favorite Color**: Green  
+   - **Favorite Pet**: None  
+   - **Favorite Food**: Pizza  
+
+3.  
+   - **Name**: Sophia Lee  
+   - **Age**: 24  
+   - **Gender**: Female  
+   - **Favorite Color**: Red  
+   - **Favorite Pet**: Cat  
+   - **Favorite Food**: Tacos  
+
+4.  
+   - **Name**: Liam Brown  
+   - **Age**: 41  
+   - **Gender**: Male  
+   - **Favorite Color**: Black  
+   - **Favorite Pet**: Dog  
+   - **Favorite Food**: Steak  
+
+5.  
+   - **Name**: Ava Williams  
+   - **Age**: 38  
+   - **Gender**: Female  
+   - **Favorite Color**: Purple  
+   - **Favorite Pet**: None  
+   - **Favorite Food**: Pasta  
+
+6.  
+   - **Name**: Noah Davis  
+   - **Age**: 27  
+   - **Gender**: Male  
+   - **Favorite Color**: Yellow  
+   - **Favorite Pet**: Rabbit  
+   - **Favorite Food**: Burgers  
+
+7.  
+   - **Name**: Isabella Martinez  
+   - **Age**: 33  
+   - **Gender**: Female  
+   - **Favorite Color**: Pink  
+   - **Favorite Pet**: Dog  
+   - **Favorite Food**: Ice Cream  
+
+8.  
+   - **Name**: Mason Garcia  
+   - **Age**: 22  
+   - **Gender**: Male  
+   - **Favorite Color**: Orange  
+   - **Favorite Pet**: None  
+   - **Favorite Food**: Fries  
+
+9.  
+   - **Name**: Charlotte Anderson  
+   - **Age**: 45  
+   - **Gender**: Female  
+   - **Favorite Color**: Teal  
+   - **Favorite Pet**: Parrot  
+   - **Favorite Food**: Salad  
+
+10.  
+   - **Name**: James Taylor  
+   - **Age**: 31  
+   - **Gender**: Male  
+   - **Favorite Color**: White  
+   - **Favorite Pet**: Cat  
+   - **Favorite Food**: Sushi  
+
+
+# Paragraph
+
+1. **Emma Johnson** is a vibrant 29-year-old woman with a deep love for the color blue. She enjoys the simple pleasures of life, including spending time with her loyal dog, which is always by her side. When it comes to food, Emma’s taste leans toward the refreshing and delicate nature of sushi. She’s the kind of person who enjoys the serenity of coastal places and the feeling of the ocean breeze.
+
+2. **Oliver Smith**, a 34-year-old man, is known for his grounded nature and practical choices. His favorite color, green, reflects his love for nature and balance. While he doesn’t have a pet, he finds comfort in his routines, particularly when he’s indulging in his favorite food, pizza. He’s always up for a casual night with friends or a cozy evening at home.
+
+3. **Sophia Lee** is a dynamic 24-year-old woman who exudes energy and vibrancy. Her love for the color red is a testament to her bold personality. Sophia is never without her cat, which provides her with the perfect balance of companionship. Her favorite food is tacos, a dish she enjoys experimenting with in her kitchen, adding new ingredients for exciting flavors.
+
+4. **Liam Brown** is a 41-year-old man with a no-nonsense attitude and a preference for the color black, which matches his sophisticated and timeless style. He has a strong bond with his dog, who is more like a best friend than a pet. When it’s time to indulge, Liam gravitates toward a juicy steak—there’s no better way to end a long day for him.
+
+5. **Ava Williams**, a 38-year-old woman, finds joy in the finer things in life, like the elegant and rich shade of purple she adores. Though she doesn’t have a pet, she enjoys a quiet, thoughtful life where pasta reigns supreme as her ultimate comfort food. Ava enjoys unwinding with a good book or watching a film, savoring every bite of her favorite dish.
+
+6. **Noah Davis**, a 27-year-old man with a zest for life, is full of surprises. His favorite color is bright yellow, symbolizing his sunny disposition and energetic personality. He has a rabbit, a pet that adds a touch of whimsy to his daily routine. Noah is a fan of simple yet satisfying foods, and nothing beats a good burger for him after a long day of activities.
+
+7. **Isabella Martinez** is a 33-year-old woman who radiates kindness and warmth. Her love for the color pink mirrors her gentle and nurturing nature. She has a dog that is always by her side, offering companionship and joy. Isabella has a sweet tooth, with ice cream being her go-to treat whenever she’s looking to indulge in something fun and sweet.
+
+8. **Mason Garcia**, 22 years old, enjoys living life with a carefree spirit. The color orange perfectly reflects his adventurous and vibrant personality. Though he doesn’t have a pet, Mason finds fulfillment in the simple joys of life, especially when he’s indulging in a plate of crispy fries. It’s the perfect snack for him whether he's hanging out with friends or on his own.
+
+9. **Charlotte Anderson**, at 45 years old, embodies grace and sophistication. She loves the serene and calming shade of teal, which aligns with her balanced and collected nature. Charlotte has a parrot, a pet she shares a close bond with, and together they enjoy a peaceful home life. Her favorite food is a fresh, vibrant salad—something healthy and refreshing that complements her lifestyle.
+
+10. **James Taylor** is a 31-year-old man who embraces a minimalist approach to life. His favorite color, white, reflects his clean and simple aesthetic. He shares his life with a cat, a pet that adds a layer of calm to his routine. James enjoys sushi, finding it to be the perfect combination of artistry and flavor, and it’s his food of choice whenever he’s out for a meal or enjoying a quiet evening at home.
