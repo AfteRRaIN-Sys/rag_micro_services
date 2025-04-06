@@ -111,10 +111,15 @@ class CustomVectorDatabase:
 
 
 def main():
-    pass
+
+    # run server
+    import subprocess
+
+    subprocess.run("chroma run --path chroma/".split())
 
 
 if __name__ == "__main__":
+
     print("start app!")
 
     # texts = ["This is text 1!", "This is a longer version of text 2!"]
@@ -130,7 +135,8 @@ if __name__ == "__main__":
     vector_db.dump_data_to_db([e["Paragraph"] for e in data], data, "user_data")
 
     print(
-        vector_db.retrive_relevant_context(
-            "What is the full name of Mason, and what's his / her favorite color?", 1
-        )
+        # vector_db.retrive_relevant_context(
+        #     "What is the full name of Mason, and what's his / her favorite color?", 1
+        # )
+        vector_db.retrive_relevant_context("How many young users are there?", 3)
     )
