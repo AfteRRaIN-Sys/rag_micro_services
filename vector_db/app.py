@@ -1,4 +1,6 @@
 from typing import Iterable, Dict, List
+import json
+import subprocess
 
 # processing
 import numpy as np
@@ -8,6 +10,9 @@ from transformers import AutoModel, AutoTokenizer
 
 # db
 import chromadb
+
+
+ENCODER_CKPT = "sentence-transformers/all-MiniLM-L6-v2"
 
 
 class TextEncoderWrapper:
@@ -63,17 +68,18 @@ class TextEncoderWrapper:
 
 class CustomVectorDatabase:
 
-    def __init__(self, encoder: TextEncoderWrapper):
+    def __init__(self, encoder: TextEncoderWrapper, as_server=False):
 
-        # init text encoder
         self.encoder = encoder
 
         # init chromadb client
-        self.client = chromadb.PersistentClient()  # run chroma server
+        if not as_server:
+            self.client = chromadb.PersistentClient()  # run chroma server
 
-        # chroma_client = chromadb.HttpClient(
-        #     host="localhost", port=8000
-        # )  # client - server
+        else:
+            self.client = chromadb.HttpClient(
+                host="localhost", port=8000
+            )  # client - server
 
     def retrive_relevant_context(self, query_text: str, k=5):
 
@@ -111,32 +117,26 @@ class CustomVectorDatabase:
 
 
 def main():
-
-    # run server
-    import subprocess
-
-    subprocess.run("chroma run --path chroma/".split())
-
-
-if __name__ == "__main__":
-
     print("start app!")
 
-    # texts = ["This is text 1!", "This is a longer version of text 2!"]
-    import json
+    # initialize
+
+    ckpt = ENCODER_CKPT
+    encoder = TextEncoderWrapper(ckpt)
+    vector_db = CustomVectorDatabase(encoder=encoder)
+
+    # dump data
 
     with open("docs/data.json", "r") as f:
         data = json.load(f)
 
-    ckpt = "sentence-transformers/all-MiniLM-L6-v2"
-    encoder = TextEncoderWrapper(ckpt)
-    vector_db = CustomVectorDatabase(encoder=encoder)
-
     vector_db.dump_data_to_db([e["Paragraph"] for e in data], data, "user_data")
 
-    print(
-        # vector_db.retrive_relevant_context(
-        #     "What is the full name of Mason, and what's his / her favorite color?", 1
-        # )
-        vector_db.retrive_relevant_context("How many young users are there?", 3)
-    )
+    # run server
+    print("Starting Chroma server!")
+    subprocess.run("chroma run --path chroma/".split())
+    # subprocess.call("chroma run --path chroma/ &", shell=True)
+
+
+if __name__ == "__main__":
+    main()
