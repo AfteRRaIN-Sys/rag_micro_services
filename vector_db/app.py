@@ -87,10 +87,14 @@ class CustomVectorDatabase:
             print("Instantiate DB with `dump_data_to_db`!!")
             return
 
+        query_embedding = self.encoder(query_text).squeeze(0).tolist()
         results = self.collection.query(
+            query_embeddings=[query_embedding],
             query_texts=[query_text],
             n_results=k,
         )
+
+        del results["embeddings"]
 
         return results
 
@@ -116,8 +120,7 @@ class CustomVectorDatabase:
         )
 
 
-def main():
-    print("start app!")
+def start():
 
     # initialize
 
@@ -133,10 +136,13 @@ def main():
     vector_db.dump_data_to_db([e["Paragraph"] for e in data], data, "user_data")
 
     # run server
-    print("Starting Chroma server!")
-    subprocess.run("chroma run --path chroma/".split())
+    # print("Starting Chroma server!")
+    # subprocess.run("chroma run --path chroma/".split())
     # subprocess.call("chroma run --path chroma/ &", shell=True)
+    print("init vector_db client!")
+
+    return vector_db
 
 
 if __name__ == "__main__":
-    main()
+    start()

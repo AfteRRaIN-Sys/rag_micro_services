@@ -4,3 +4,6 @@
 
 # chroma
 /chroma/*
+
+# pycache
+**/__pycache__/
