@@ -3,5 +3,8 @@ pandas
 torch
 transformers # huggingface
 
+# llm
+langchain-ollama
+
 # db
 chromadb
