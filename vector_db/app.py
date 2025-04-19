@@ -108,7 +108,10 @@ class CustomVectorDatabase:
 
         self.collection = self.client.get_or_create_collection(
             name=collection_name,
-            metadata={"hnsw:space": "cosine"},  # l2 is the default
+            metadata={
+                "hnsw:space": "cosine",  # l2 is the default
+                "hnsw:num_threads": 1
+            }
         )
 
         # since chromadb is `vectordb`, it expects text should be kept as vector
