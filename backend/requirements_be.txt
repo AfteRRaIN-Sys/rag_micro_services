@@ -1,0 +1,8 @@
+# fastAPI
+fastapi
+
+# llm
+langchain-ollama
+
+# env
+python-dotenv

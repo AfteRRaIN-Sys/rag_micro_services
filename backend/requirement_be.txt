@@ -1,4 +1,0 @@
-# fastAPI
-
-# llm
-langchain-ollama

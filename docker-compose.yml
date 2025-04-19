@@ -1,0 +1,11 @@
+version: '0.1.0'
+services:
+  vectordb:
+    ports:
+      - "8000:8080"
+  backend:
+    ports:
+      - "8000:8081"
+  frontend:
+    ports:
+      - "3000:3000"
