@@ -110,8 +110,8 @@ class CustomVectorDatabase:
             name=collection_name,
             metadata={
                 "hnsw:space": "cosine",  # l2 is the default
-                "hnsw:num_threads": 1
-            }
+                "hnsw:num_threads": 1,
+            },
         )
 
         # since chromadb is `vectordb`, it expects text should be kept as vector
@@ -142,7 +142,7 @@ def start():
     # print("Starting Chroma server!")
     # subprocess.run("chroma run --path chroma/".split())
     # subprocess.call("chroma run --path chroma/ &", shell=True)
-    print("init vector_db client!")
+    print("init vector_db engine!")
 
     return vector_db
 
