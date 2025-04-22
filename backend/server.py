@@ -1,22 +1,40 @@
+import os
+import subprocess
+from dotenv import load_dotenv
+
 import fastapi
 from fastapi import FastAPI
 from langchain_ollama import OllamaLLM
 
-import client 
+import db_client
+
+load_dotenv("service.env")
+
+BACKEND_PORT = os.environ.get("PORT")
 
 app = FastAPI()
 
-model_ckpt = "llama3.2"
-model = OllamaLLM(model=model_ckpt)
+MODEL_CKPT = "llama3.2"
+model = OllamaLLM(model=MODEL_CKPT)
+
+
+@app.get("/")
+def test():
+    return {"message": "hello backend!"}
 
 
 @app.get("/qa/{question}")
 def qa(question: str):
-    # vector_db
-    # return {"question": prompt}
 
-    # retrive relevant text
-    context = vector_db_client.retrive_relevant_context(question)
+    print(f"qa : {question}")
+
+    # retrive relevant text from vector db
+    retrived_data = db_client.retrive_relevant_context(question)
+
+    if retrived_data == "Error":
+        return {"status_code": 500, "message": "Retrival Error!"}
+
+    context = "\n".join([e[0] for e in retrived_data["documents"]])
 
     # generate context-augmented prompt
     augmented_prompt = f"""Context: {context}\n\nQuestion: {question}\nAnswer:"""
@@ -49,3 +67,4 @@ def main():
 
 if __name__ == "__main__":
     print("start app!")
+    subprocess.run(f"uvicorn server:app --host 0.0.0.0 --port {BACKEND_PORT}".split())

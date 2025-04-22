@@ -1,26 +1,48 @@
-import fastapi
+import os
+from dotenv import load_dotenv
+
+import json
+
 from fastapi import FastAPI
 from langchain_ollama import OllamaLLM
 
-import app as retriever
+import engine
+
+
+load_dotenv("server.env")
+PORT = os.environ.get("PORT")
 
 app = FastAPI()
 
-# model_ckpt = "llama3.2"
-# model = OllamaLLM(model=model_ckpt)
-
-vector_db_client = retriever.start()
+vector_db_client = engine.start()
 
 
 @app.get("/")
 def read_root():
-    return {"text": "hello vector db!"}
+    res = {"status": 200, "text": "hello vector db!"}
+    return res
 
 
 @app.get("/query/{text}")
 def query_relevant_text(text: str):
     # vector_db
-    return {"query": text, "result": vector_db_client.retrive_relevant_context(text)}
+    res = {
+        "status": 200,
+        "query": text,
+        "result": vector_db_client.retrive_relevant_context(text),
+    }
+    return res
+
+
+@app.get("/query/{text}/{k}")
+def query_relevant_text(text: str, k: int):
+    # vector_db
+    res = {
+        "status": 200,
+        "query": text,
+        "result": vector_db_client.retrive_relevant_context(text, k),
+    }
+    return res
 
 
 # @app.get("/qa/{question}")
@@ -40,5 +62,8 @@ def query_relevant_text(text: str):
 #     return {"query": question, "context": context, "response": response}
 
 
-# if __name__ == "__main__":
-#     pass
+if __name__ == "__main__":
+
+    import subprocess
+
+    subprocess.run(f"uvicorn server:app --host 0.0.0.0 --port {PORT}".split())
