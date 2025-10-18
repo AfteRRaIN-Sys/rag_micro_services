@@ -12,6 +12,8 @@
   
   - output: ![alt text](image.png)
 
+- for the vscode to recognize the `requirements` files, make sure to use `requirements` prefix
+
 ---
 # Service Structure
 

@@ -47,6 +47,7 @@ class TextEncoderWrapper:
         ) / torch.clamp(
             mask.sum(1), min=1e-9
         )  # sum along seq dim
+
         # NOTE: why use clamp? torch.clamp(input_mask_expanded.sum(1), min=1e-9)
 
         """
@@ -71,6 +72,8 @@ class CustomVectorDatabase:
     def __init__(self, encoder: TextEncoderWrapper, as_server=False):
 
         self.encoder = encoder
+
+        print("Starting Chroma server!")
 
         # init chromadb client
         if not as_server:
@@ -131,18 +134,18 @@ def start():
     encoder = TextEncoderWrapper(ckpt)
     vector_db = CustomVectorDatabase(encoder=encoder)
 
-    # dump data
+    # dump mock data
 
-    with open("docs/data.json", "r") as f:
-        data = json.load(f)
+    # with open("docs/data.json", "r") as f:
+    #     data = json.load(f)
 
-    vector_db.dump_data_to_db([e["Paragraph"] for e in data], data, "user_data")
+    # vector_db.dump_data_to_db([e["Paragraph"] for e in data], data, "user_data")
 
     # run server
-    # print("Starting Chroma server!")
     # subprocess.run("chroma run --path chroma/".split())
     # subprocess.call("chroma run --path chroma/ &", shell=True)
-    print("init vector_db engine!")
+
+    print("initialized vector_db engine")
 
     return vector_db
 
